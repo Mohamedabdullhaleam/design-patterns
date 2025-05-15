@@ -1,17 +1,17 @@
 export type ToastProps = {
   message: string;
-  id: number;
-  variant?: 'default' | 'success' | 'error';
+  id: string;
+  variant?: "default" | "success" | "error";
   onClose(): void;
 };
 
-const variantsBackground: Record<NonNullable<ToastProps['variant']>, string> = {
-  default: 'bg-gray-900',
-  success: 'bg-teal-600',
-  error: 'bg-red-500',
+const variantsBackground: Record<NonNullable<ToastProps["variant"]>, string> = {
+  default: "bg-gray-900",
+  success: "bg-teal-600",
+  error: "bg-red-500",
 };
 
-export function Toast({ message, variant = 'default', onClose }: ToastProps) {
+export function Toast({ message, variant = "default", onClose }: ToastProps) {
   return (
     <div
       className={`text-sm text-white rounded-xl shadow-lg ${variantsBackground[variant]} pointer-events-auto`}
